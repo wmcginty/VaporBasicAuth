@@ -1,15 +1,17 @@
 import Vapor
+import Authentication
+import Crypto
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
-    // Basic "Hello, world!" example
-    router.get("hello") { req in
-        return "Hello, world!"
-    }
-
-    // Example of configuring a controller
+    
     let todoController = TodoController()
+    let basicAuthMiddleware = User.basicAuthMiddleware(using: BCrypt)
+    let basicAuthGroup = router.grouped(basicAuthMiddleware)
     router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
+    basicAuthGroup.post("todos", use: todoController.create)
+    basicAuthGroup.delete("todos", Todo.parameter, use: todoController.delete)
+    
+    let userRouteController = UserController()
+    try userRouteController.boot(router: router)
 }
