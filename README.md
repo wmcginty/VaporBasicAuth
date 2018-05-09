@@ -12,3 +12,5 @@
         <img src="http://img.shields.io/badge/swift-4.1-brightgreen.svg" alt="Swift 4.1">
     </a>
 </center>
+
+This is the completed sample project from my Basic Authentication with Vapor 3 tutorial.
