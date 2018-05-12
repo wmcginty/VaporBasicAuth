@@ -1,5 +1,5 @@
 //
-//  UserController.swift
+//  TodoController.swift
 //  App
 //
 //  Created by William McGinty on 5/8/18.
@@ -24,6 +24,7 @@ class TodoController: RouteCollection {
     }
 }
 
+//MARK: Helper
 private extension TodoController {
     
     func getTodosHandler(_ request: Request) throws -> Future<[Todo]> {
