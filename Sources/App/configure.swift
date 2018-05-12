@@ -36,5 +36,7 @@ public func configure(
     var migrationConfig = MigrationConfig()
     migrationConfig.add(model: User.self, database: .sqlite)
     migrationConfig.add(model: Todo.self, database: .sqlite)
+    migrationConfig.add(model: AccessToken.self, database: .sqlite)
+    migrationConfig.add(model: RefreshToken.self, database: .sqlite)
     services.register(migrationConfig)
 }
