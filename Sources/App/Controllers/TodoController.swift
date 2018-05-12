@@ -18,7 +18,7 @@ class TodoController: RouteCollection {
         
         let basicAuthMiddleware = User.basicAuthMiddleware(using: BCrypt)
         let guardAuthMiddleware = User.guardAuthMiddleware()
-        let basicAuthGroup = router.grouped([basicAuthMiddleware, guardAuthMiddleware])
+        let basicAuthGroup = group.grouped([basicAuthMiddleware, guardAuthMiddleware])
         basicAuthGroup.post(use: createTodoHandler)
         basicAuthGroup.delete(Todo.parameter, use: deleteTodoHandler)
     }
