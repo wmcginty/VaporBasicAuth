@@ -13,4 +13,4 @@
 
 <h3>VaporBasicAuth</h3>
 
-This is the completed sample project from my Basic Authentication with Vapor 3 tutorial.
+This is the completed sample project from my Basic Authentication with Vapor 3 tutorial. There is an instance of this project running on Vapor.Cloud here: http://wm-basicauth.vapor.cloud/
